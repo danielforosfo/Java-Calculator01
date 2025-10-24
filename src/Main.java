@@ -58,7 +58,8 @@ public class Main {
                             + result);
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "invalid option");
+                    JOptionPane.showMessageDialog(null, "invalid option, try again!");
+
                     break;
             }
             String restart = JOptionPane.showInputDialog("Do you want to do another operation?\n" +
