@@ -1,12 +1,14 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         boolean continu = true;
         Scanner sc = new Scanner(System.in);
+        Operation op = new Operation();
         while (continu) {
-            System.out.println("-------------------------");
-            System.out.print("JAVA - CALCULATOR: \n" +
+
+            String answer = JOptionPane.showInputDialog("JAVA - CALCULATOR: \n" +
                     "-choose an operation-\n" +
                     "-------------------------\n" +
                     "|1| - add\n" +
@@ -14,77 +16,70 @@ public class Main {
                     "|3| - multiply\n" +
                     "|4| - divide\n" +
                     "answer: \n");
-            int answer = sc.nextInt();
-            double number1, number2, result;
-
-            System.out.println("-------------------------");
-            switch (answer) {
+            int answerr = Integer.parseInt(answer);
+            String number1, number2;
+            double result;
+            switch (answerr) {
                 case 1:
-                    System.out.print("|add operation|\n");
-                    System.out.print("enter a number: ");
-                    number1 = sc.nextDouble();
-                    System.out.print("enter another number: ");
-                    number2 = sc.nextDouble();
-                    result = number1 + number2;
-                    System.out.println("|RESULT|\n"
-                            +result);
+
+                    number1 = JOptionPane.showInputDialog("|add operation|\n" + "enter a number: ");
+                    number2 = JOptionPane.showInputDialog("enter another number: ");
+                    double dNumber1 = Double.parseDouble(number1);
+                    double dNumber2 = Double.parseDouble(number2);
+                    result = op.add(dNumber1, dNumber2);
+                    JOptionPane.showMessageDialog(null, "|RESULT| = "
+                            + result);
                     break;
                 case 2:
-                    System.out.print("|subtract operation|\n");
-                    System.out.print("enter a number: ");
-                    number1 = sc.nextDouble();
-                    System.out.print("enter another number: ");
-                    number2 = sc.nextDouble();
-                    result = number1 - number2;
-                    System.out.println("|RESULT|\n"
-                            +result);
+                    number1 = JOptionPane.showInputDialog("|subtract operation|\n" + "enter a number: ");
+                    number2 = JOptionPane.showInputDialog("enter another number: ");
+                    double cNumber1 = Double.parseDouble(number1);
+                    double cNumber2 = Double.parseDouble(number2);
+                    result = op.subtract(cNumber1, cNumber2);
+                    JOptionPane.showMessageDialog(null, "|RESULT| = "
+                            + result);
                     break;
                 case 3:
-                    System.out.print("|multiply operation|\n");
-                    System.out.print("enter a number: ");
-                    number1 = sc.nextDouble();
-                    System.out.print("enter another number: ");
-                    number2 = sc.nextDouble();
-                    result = number1 * number2;
-                    System.out.println("|RESULT|\n"
-                            +result);
+                    number1 = JOptionPane.showInputDialog("|multiply operation|\n" + "enter a number: ");
+                    number2 = JOptionPane.showInputDialog("enter another number: ");
+                    double aNumber1 = Double.parseDouble(number1);
+                    double aNumber2 = Double.parseDouble(number2);
+                    result = op.multiply(aNumber1, aNumber2);
+                    JOptionPane.showMessageDialog(null, "|RESULT| = "
+                            + result);
                     break;
                 case 4:
-                    System.out.println("|divide operation|\n");
-                    System.out.print("enter a number: ");
-                    number1 = sc.nextDouble();
-                    System.out.print("enter another number: ");
-                    number2 = sc.nextDouble();
-                    if (number2 == 0) {
-                        System.out.println("cannot divide by zero!");
-                    } else {
-                        result = number1 / number2;
-                        System.out.println("|RESULT|\n" +result);}
+                    number1 = JOptionPane.showInputDialog("|divide operation|\n" + "enter a number: ");
+                    number2 = JOptionPane.showInputDialog("enter another number: ");
+                    double bNumber1 = Double.parseDouble(number1);
+                    double bNumber2 = Double.parseDouble(number2);
+                    result = op.divide(bNumber1, bNumber2);
+                    JOptionPane.showMessageDialog(null, "|RESULT| = "
+                            + result);
                     break;
                 default:
-                    System.out.println("invalid option");
+                    JOptionPane.showMessageDialog(null, "invalid option");
                     break;
             }
-            System.out.println("Do you want to do another operation?\n" +
+            String restart = JOptionPane.showInputDialog("Do you want to do another operation?\n" +
                     "|1| - yes\n" +
                     "|0| - No");
-            int restart = sc.nextInt();
-            if ( restart == 0) {
+            int restartt = Integer.parseInt(restart);
+            if (restartt == 0) {
                 continu = false;
                 break;
 
-            } else if (restart == 1) {
+            } else if (restartt == 1) {
 
 
-            }else {
-                System.out.println("invalid option\n");
+            } else {
+                JOptionPane.showMessageDialog(null, "invalid option\n");
                 break;
 
             }
 
 
         }
-        System.out.println("PROGRAM CLOSED");
-        sc.close();
+        JOptionPane.showMessageDialog(null,"PROGRAM CLOSED");
     }
 }

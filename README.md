@@ -1,57 +1,44 @@
-# 🧮 Java Calculator
+# 🧮 Java Calculator (Swing Edition)
 
-A simple and interactive calculator built in Java.  
-It allows the user to perform basic arithmetic operations directly from the console.
+A simple calculator built in **Java**, using `JOptionPane` dialogs for user interaction.  
+This project demonstrates the use of **Object-Oriented Programming (OOP)** principles with a clean structure and user-friendly interface.
 
 ---
 
 ## 🚀 Features
 
-- ➕ Addition
-- ➖ Subtraction
-- ✖️ Multiplication
-- ➗ Division (with zero-division validation)
-- 🔁 Option to repeat operations until the user exits
+- Addition, subtraction, multiplication, and division operations
+- Interactive graphical input using `JOptionPane`
+- Input validation for user choices
+- Loop system allowing multiple calculations in a single session
+- Clean separation of logic through a dedicated `Operation` class
 
 ---
 
-## 🧠 What I Learned
+## 🧠 How It Works
 
-This project helped me practice:
-- Using variables and data types
-- `while` loops and `switch` statements
-- Handling user input with `Scanner`
-- Basic error handling and clean code structure
-
----
-
-## 🖥️ How to Run
-
-1. Clone this repository or download the `.java` file.
-2. Open it in your preferred IDE (IntelliJ, Eclipse, VSCode, etc.).
-3. Compile and run the `Main.java` file.
-4. Follow the instructions displayed in the console.
-
-Example:
-JAVA - CALCULATOR:
-|1| - add
-|2| - subtract
-|3| - multiply
-|4| - divide
-answer: 1
-enter a number: 5
-enter another number: 3
-|RESULT|
-8.0
+1. The program displays a menu asking the user to select an operation.
+2. The user inputs two numbers.
+3. The program performs the selected operation using methods from the `Operation` class.
+4. The result is shown in a dialog box.
+5. The user can choose to perform another operation or exit the program.
 
 ---
 
+## 💻 Technologies Used
+
+- **Java SE**
+- **Swing (`JOptionPane`)**
+- **Scanner (for potential console input)**
+
+---
 ## 📁 Project Structure
 📂 projectJavaCalculator
 projeto/
 ┣ 📂 .idea/
 ┣ 📂 src/
 ┃ ┗ Main.java
+    Operation.java
 ┣ 📜 README.md
 ┣ 📜 .gitignore
 ┗ 📜 projectJavaCalculator.iml
